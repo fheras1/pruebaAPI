@@ -1,8 +1,8 @@
 <h2>Login</h2>
 
-<form action="/login" method="POST" id="form-container" class="login">
-  <label for="username">Username</label>
-  <input type="text" name="username" placeholder="JonSnow">
+<form action="/session" method="POST" id="form-container" class="login">
+  <label for="email">Email</label>
+  <input type="text" name="email" placeholder="email@domain.com">
   <br><br>
   <label for="password">Password</label>
   <input type="password" name="password" placeholder="Your password">
@@ -10,6 +10,6 @@
   <button>Sign in</button>
 
   <p class="account-message">
-    Don't have an account? <a href="/signup">Sign up</a>
+    Don't have an account? <a href="/users/signup">Sign up</a>
   </p>
 </form>

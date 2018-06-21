@@ -42,6 +42,10 @@ app.use((req, res, next) => {
   next();
 });
 
+//Views
+app.set('views')
+app.set('view engine', 'ejs');
+
 // Routes
 app.use('/notes', notesRoutes);
 app.use('/users', usersRoutes);

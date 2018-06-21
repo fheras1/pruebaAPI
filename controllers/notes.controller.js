@@ -5,7 +5,7 @@ const ApiError = require('../models/api-error.model');
 module.exports.create = (req, res, next) => {
   const {title, content}  = req.body;
   const data = {
-    title: title ? title : 'No título',
+    title: title ? title : 'No title',
     content: content ? content : 'No content'
   };
   const newNote = new Note(data);
@@ -31,7 +31,7 @@ module.exports.showOne = (req, res, next) => {
 module.exports.giveStar = (req, res, next) => {
   const id = req.params.id;
 
-  Note.findByIdAndUpdate(id, { $set: {outstanding: true} }, { new: true })
+  Note.findByIdAndUpdate(id, { $set: {favourite: true} }, { new: true })
    .then(note => {
      if (note) {
        res.status(200).json(note);
@@ -41,8 +41,8 @@ module.exports.giveStar = (req, res, next) => {
    }).catch(error => next(error));
  };
 
- module.exports.showOutstanding = (req, res, next) => {
-   Note.find( {outstanding: true} )
+ module.exports.showFavourite = (req, res, next) => {
+   Note.find( {favourite: true} )
    .then(notes =>  res.status(200).json(notes))
    .catch(error => next(new ApiError(error.message, 503)));
  };
