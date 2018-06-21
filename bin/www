@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('pruebaapi:server');
+var debug = require('debug')('pruebaApi:server');
 var http = require('http');
 
 /**
